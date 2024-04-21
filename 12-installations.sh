@@ -8,7 +8,6 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-echo -e "GREEN :$G then $N"
 
 
 
@@ -26,9 +25,9 @@ VALIDATE()
 {
     if [ $1 -ne 0 ];
     then 
-        echo "$2...FAILURE"
+        echo -e "$2...$R FAILURE $N"
     else 
-        echo "$2 ... SUCCESS"    
+        echo "$2 ... $G SUCCESS $N"    
 
     fi
 }
