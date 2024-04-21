@@ -33,7 +33,7 @@ VALIDATE()
 }
 
 
-dnf instll mysql -y &>>$LOGFILE
+dnf install mysql -y &>>$LOGFILE
 VALIDATE $? "mysql installation"
 
 dnf install git -y &>>$LOGFILE
