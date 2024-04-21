@@ -10,5 +10,5 @@ echo "Home : $HOME"
 
 echo "hostname :$HOSTNAME"
 echo "Current PID:$$"
-sleep 60
+sleep 60 &
 echo "Background PID:$!"
