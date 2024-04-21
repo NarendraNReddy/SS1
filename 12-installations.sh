@@ -31,3 +31,13 @@ VALIDATE()
 
     fi
 }
+
+
+dnf instll mysql -y &>>$LOGFILE
+VALIDATE $? "mysql installation"
+
+dnf install git -y &>>$LOGFILE
+VALIDATE $? "Git installation"
+
+dnf install wrong -y &>>$LOGFILE
+VALIDATE $? "Wrong installation"
