@@ -8,7 +8,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-echo -e "GREEN :$Y then $N"
+echo -e "GREEN :$G then $N"
 
 
 
