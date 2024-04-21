@@ -2,7 +2,9 @@
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
-echo $LOGFILE
+R="\e[31m"
+
+echo -e "$R RED IN COLOR"
 
 USERID=$(id -u)
 
