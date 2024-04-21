@@ -1,4 +1,4 @@
-#!/usr/bin
+#/bin/bash 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
@@ -7,8 +7,6 @@ G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
-
-
 
 
 USERID=$(id -u)
@@ -32,10 +30,14 @@ VALIDATE()
     fi
 }
 
-
-dnf install mysql -y &>>$LOGFILE
-VALIDATE $? "mysql installation"
-
-dnf install git -y &>>$LOGFILE
-VALIDATE $? "Git installation"
-
+for i in $@;
+do 
+    dnf list installed $i &>>$LOGFILE
+    if [ $? -ne 0 ];
+    then 
+        dnf install $i -y &>>$LOGFILE
+        VALIDATE $? "$i instllation"
+    else 
+        echo -e "$i installation already done .....$Y SKIPPING $N"
+    fi     
+done 
