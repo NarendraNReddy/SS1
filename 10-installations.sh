@@ -8,4 +8,4 @@ else
     echo "Super user"
 fi     
 
-dnf install mysql -y
+dnf installl mysql -y
