@@ -8,11 +8,20 @@ else
     echo "Super user"
 fi     
 
-dnf installt mysql -y
+dnf install mysql -y
 
 if [ $? -ne 0 ];
 then 
     echo "mysql instllation...FAILURE"
 else    
     echo "mysql instllation...SUCCESS"
+fi
+
+dnf install git -y 
+
+if [ $? -ne 0 ];
+then 
+    echo "Git instllation...FAILURE"
+else    
+    echo "Git instllation...SUCCESS"
 fi
