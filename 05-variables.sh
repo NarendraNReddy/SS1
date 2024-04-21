@@ -1,9 +1,9 @@
 #/bin/bash
 echo "Enter username"
-read USERNAME
+read -s USERNAME
 
 echo "Ente password"
-read PASSWORD
+read -s PASSWORD
 
 
 echo "User name:$USERNAME,Password is :$PASSWORD"
